@@ -37,7 +37,6 @@ const Home = () => {
             <section id="About">
                 <About />
             </section>
-
         </div>
     )
 }

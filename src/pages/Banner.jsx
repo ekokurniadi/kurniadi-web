@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'black',
         position: 'relative',
         top: '100px'
-        // 
     },
     quote: {
         textAlign: 'center',

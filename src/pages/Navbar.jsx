@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Container, Grid } from '@material-ui/core';
 import my from '../assets/my2.png'
 import Scrollspy from 'react-scrollspy'
+
 // begin styling styled component
 const useStyles = makeStyles({
     root: {
@@ -15,12 +16,9 @@ const useStyles = makeStyles({
     navbarLogo: {
         width: '80px',
         justifyContent: 'center'
-
     },
     navbar: {
-        // backgroundColor: '#15191f'
         backgroundColor: 'black',
-
     },
     navigation: {
         textDecoration: 'none',
@@ -44,7 +42,6 @@ export const Navbar = () => {
                             <Grid item md={6} xs={3}>
                                 <img src={my} alt="" className={classes.navbarLogo} data-aos="fade-down" />
                             </Grid>
-
                             <Grid item md={2} xs={3} data-aos="fade-down" >
                                 <a href="#bannerWeb" className={classes.navigation} >About</a>
                             </Grid>

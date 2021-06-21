@@ -5,7 +5,6 @@ import my from '../assets/arrow.gif'
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
-
     },
     wrapper: {
         display: 'flex',
