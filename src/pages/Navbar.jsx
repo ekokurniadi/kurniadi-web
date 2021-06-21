@@ -2,25 +2,33 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Container, Grid } from '@material-ui/core';
 import my from '../assets/my2.png'
-
+import Scrollspy from 'react-scrollspy'
 // begin styling styled component
 const useStyles = makeStyles({
     root: {
-        flexFlow: 1,
+        flex: 1,
         fontFamily: 'Poppins',
+        fontWeight: 'w400',
         letterSpacing: 3
 
     },
     navbarLogo: {
         width: '80px',
+        justifyContent: 'center'
 
     },
     navbar: {
-        backgroundColor: '#15191f'
+        // backgroundColor: '#15191f'
+        backgroundColor: 'black',
+
     },
     navigation: {
         textDecoration: 'none',
-        color: 'white'
+        color: 'white',
+        '&:hover': {
+            color: "yellow",
+        },
+
     }
 });
 // end of styling styled component
@@ -29,27 +37,28 @@ export const Navbar = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <AppBar position="static" className={classes.navbar}>
+            <AppBar position="fixed" className={classes.navbar}>
                 <Container>
-                    <Grid container direction="row" alignItems="center">
-                        <Grid item md={4} xs={2}>
-                            <img src={my} alt="" className={classes.navbarLogo} />
-                        </Grid>
-                        <Grid item md={2} xs={1}>
+                    <Scrollspy items={['section-1', 'section-2', 'section-3']} currentClassName="is-current">
+                        <Grid container direction="row" alignItems="center">
+                            <Grid item md={6} xs={3}>
+                                <img src={my} alt="" className={classes.navbarLogo} data-aos="fade-down" />
+                            </Grid>
 
+                            <Grid item md={2} xs={3} data-aos="fade-down" >
+                                <a href="#bannerWeb" className={classes.navigation} >About</a>
+                            </Grid>
+                            <Grid item md={2} xs={3} data-aos="fade-down" >
+                                <a href="" className={classes.navigation} >Work</a>
+                            </Grid>
+                            <Grid item md={2} xs={3} data-aos="fade-down" >
+                                <a href="" className={classes.navigation} >Contact</a>
+                            </Grid>
                         </Grid>
-                        <Grid item md={2} xs={3}>
-                            <a href="" className={classes.navigation}>ABOUT</a>
-                        </Grid>
-                        <Grid item md={2} xs={3}>
-                            <a href="" className={classes.navigation}>WORK</a>
-                        </Grid>
-                        <Grid item md={2} xs={3}>
-                            <a href="" className={classes.navigation}>CONTACT</a>
-                        </Grid>
-                    </Grid>
+                    </Scrollspy>
                 </Container>
             </AppBar>
+
         </div>
     )
 }

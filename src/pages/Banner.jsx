@@ -2,13 +2,19 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
 import Typewriter from 'typewriter-effect';
-
-const useStyles = makeStyles({
+import Backgound from '../assets/inifite.gif'
+const useStyles = makeStyles((theme) => ({
     root: {
         flexFlow: 1,
-        // minHeight: '300px',
-        // backgroundColor: 'black',
-
+        backgroundImage: `url(${Backgound})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        objectFit: 'contain',
+        minHeight: '400px',
+        backgroundColor: 'black',
+        position: 'relative',
+        top: '100px'
+        // 
     },
     quote: {
         textAlign: 'center',
@@ -20,12 +26,16 @@ const useStyles = makeStyles({
         textAlign: 'center',
         fontFamily: 'Indie Flower',
         color: '#4BBAE6',
-        fontSize: '55px',
-        // marginBottom: '-50px',
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '55px',
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '25px',
+        },
         marginTop: '50px',
         fontWeight: 'bold'
     }
-});
+}));
 export const BannerWeb = () => {
     const classes = useStyles();
     return (
